@@ -4,6 +4,8 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { SocialIcon } from "react-social-icons";
 
+import profileImg from "../assets/profile-img.jpg";
+
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Blog Posts", href: "/post", current: false },
@@ -15,7 +17,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Example() {
+const Navbar = () => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -23,7 +25,7 @@ export default function Example() {
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
+                {/* ---------- Mobile menu button ---------- */}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -36,16 +38,22 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   {/* -------------------------------------------------------------------- */}
-                  <img
+                  {/* <img
                     className="block lg:hidden h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                     alt="Workflow"
-                  />
-                  <img
+                  /> */}
+                  <div className="block lg:hidden h-8 w-auto logo-font text-5xl mb-4">
+                    :443
+                  </div>
+                  <div className="hidden lg:block h-8 w-auto logo-font text-3xl mb-1">
+                    localhost:443
+                  </div>
+                  {/* <img
                     className="hidden lg:block h-8 w-auto"
                     src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
                     alt="Workflow"
-                  />
+                  /> */}
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -76,9 +84,9 @@ export default function Example() {
                         <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                           <span className="sr-only">Open social menu</span>
                           <img
-                            className="h-12 w-12 rounded-full"
-                            src="https://lh3.googleusercontent.com/jxI3v4FlroPXkTdpShadNIGa9i5qM0_jyURMgOfrssQjTHUoc0h6-UENzhQWv9yTlLbR2rU5nunJytOzKwaZCDTDIdLbUugUoEOaqbfZGlGxx97yUJDBm74vIZDDuCCDjEG4QQXXGOslp800fIljptu9n0U1kQ?authuser=0"
-                            alt="ProfileImage"
+                            className="h-12 w-12 rounded-full object-contain"
+                            src={profileImg}
+                            alt=""
                           />
                         </Menu.Button>
                       </div>
@@ -94,7 +102,7 @@ export default function Example() {
                       >
                         <Menu.Items
                           static
-                          className="origin-top-right absolute right-0 mt-2 w-12 rounded-3xl shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                          className="origin-top-right absolute z-10 right-0 mt-2 w-12 rounded-3xl shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                         >
                           <Menu.Item>
                             {({ active }) => (
@@ -144,6 +152,38 @@ export default function Example() {
                               </span>
                             )}
                           </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <span className="block">
+                                <SocialIcon
+                                  url="https://www.fiverr.com/shashika05"
+                                  className="mr-2 ml-2 mb-2"
+                                  target="_blank"
+                                  fgColor="#fff"
+                                  style={{
+                                    height: 35,
+                                    width: 35,
+                                  }}
+                                />
+                              </span>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <span className="block">
+                                <SocialIcon
+                                  url="https://www.upwork.com/freelancers/~01746ebf8db384252f"
+                                  className="mr-2 ml-2 mb-2"
+                                  target="_blank"
+                                  fgColor="#fff"
+                                  style={{
+                                    height: 35,
+                                    width: 35,
+                                  }}
+                                />
+                              </span>
+                            )}
+                          </Menu.Item>
                         </Menu.Items>
                       </Transition>
                     </>
@@ -176,4 +216,6 @@ export default function Example() {
       )}
     </Disclosure>
   );
-}
+};
+
+export default Navbar;
