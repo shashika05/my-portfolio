@@ -26,7 +26,7 @@ export default function Project() {
   if (!projectData) return <Loading />;
 
   return (
-    <main className="min-h-screen p-12 bg-image-custom">
+    <main className="min-h-screen p-12">
       <section className="container mx-auto">
         <h1 className="text-4xl flex justify-center">My Projects</h1>
         <h2 className="text-base text-gray-600 flex justify-center mb-12">

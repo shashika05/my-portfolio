@@ -29,7 +29,7 @@ const Post = () => {
   if (!postData) return <Loading />;
 
   return (
-    <main className="min-h-screen p-12 bg-image-custom">
+    <main className="min-h-screen p-12">
       <section className="container mx-auto">
         <h1 className="text-4xl flex justify-center">Blog Posts</h1>
         <h2 className="text-base flex text-gray-600 justify-center mb-12">

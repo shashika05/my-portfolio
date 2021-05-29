@@ -8,12 +8,13 @@ import SinglePost from "./components/SinglePost";
 import Post from "./components/Post";
 import Project from "./components/Project";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 import NotFound from "./components/NotFound";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-image-custom">
       <BrowserRouter>
         <NavBar />
         <Switch>
@@ -24,6 +25,7 @@ function App() {
           <Route component={Project} path="/project" />
           <Route path="*" component={NotFound} />
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

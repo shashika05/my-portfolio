@@ -5,13 +5,14 @@ import loadingJson from "../assets/loading.json";
 function Loading() {
   return (
     <div
+      className="mb-100 h-400"
       style={{
         flex: 1,
         // backgroundImage: `url(${Background})`,
         alignItems: "center",
         justifyContent: "center",
         width: "100px",
-        height: "100px",
+        height: "600px",
         marginTop: "200px",
         marginInline: "auto",
       }}

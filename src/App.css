@@ -15,3 +15,7 @@
   /* background-image: url("./assets/web-background.png"); */
   background-image: url("./assets/circuit-board-background.png");
 }
+
+.bg-home {
+  background-image: url("./assets/background-img.jpg");
+}

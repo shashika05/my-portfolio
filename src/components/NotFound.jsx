@@ -2,7 +2,7 @@ import React from "react";
 
 const NotFound = () => {
   return (
-    <main className="min-h-screen p-12 bg-image-custom">
+    <main className="min-h-screen p-12">
       <section className="container mx-auto mt-16">
         <h1 className="sm:text-4xl flex justify-center text-xl">
           Oops, That's not found

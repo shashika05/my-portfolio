@@ -40,7 +40,7 @@ const SinglePost = () => {
   if (!singlePost) return <Loading />;
 
   return (
-    <main className="bg-gray-200 min-h-screen p-12 bg-image-custom">
+    <main className="bg-gray-200 min-h-screen p-12">
       <article className="container shadow-lg mx-auto rounded-lg">
         <header className="relative">
           <div className="absolute h-full w-full flex items-center justify-center p-8">

@@ -30,7 +30,7 @@ const MyStory = () => {
   if (!author) return <Loading />;
 
   return (
-    <main className="min-h-screen p-8 bg-image-custom">
+    <main className="min-h-screen p-8">
       {/* <img src={bgImage} alt="bg-img" className="absolute w-full" /> */}
       <div className="p-10 l:pt-48 container mx-auto relative">
         <section className="rounded-lg bg-image-custom shadow-2xl lg:flex lg:p-16 p-8 container mx-auto">
