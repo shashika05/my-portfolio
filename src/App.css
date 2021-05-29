@@ -1,12 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
 .App {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .logo-font {
   font-family: "Source Code Pro", monospace;
   color: aliceblue;
+}
+
+.bg-image-custom {
+  /* background-image: url("./assets/web-background.png"); */
+  background-image: url("./assets/circuit-board-background.png");
 }

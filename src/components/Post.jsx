@@ -25,16 +25,16 @@ const Post = () => {
   }, []);
 
   return (
-    <main className="min-h-screen p-12">
+    <main className="min-h-screen p-12 bg-image-custom">
       <section className="container mx-auto">
-        <h1 className="text-4xl justify-center">Blog Posts</h1>
-        <h2 className="text-large text-gray-600 justify-center mb-12">
-          Here is some interesting content for you :-
+        <h1 className="text-4xl flex justify-center">Blog Posts</h1>
+        <h2 className="text-base flex text-gray-600 justify-center mb-12">
+          Here is some interesting content for you
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {postData &&
             postData.map((post, index) => (
-              <article>
+              <article className="relative rounded-lg shadow-xl bg-white">
                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                   <span
                     className="block h-64 relative rounded shadow leading-snug bg-white "

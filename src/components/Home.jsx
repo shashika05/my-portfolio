@@ -25,10 +25,10 @@ const Home = () => {
         alt="bgImage"
         className="absolute object-cover w-full h-full opacity-25"
       />
-      <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 px-8">
+      <section className="relative flex justify-center min-h-screen pt-48 lg:pt-64 px-8">
         <h1 className="text-3xl font-bold leading-none lg:leading-snug">
-          {great} ! <br /> I'm Shashika "localhost:443" Raveen from 🇱🇰 Sri
-          Lanka.
+          {great} ! <br />
+          <br /> I'm Shashika "localhost:443" Raveen from 🇱🇰 Sri Lanka.
         </h1>
       </section>
     </main>
