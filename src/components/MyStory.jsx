@@ -4,6 +4,8 @@ import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 
+import Loading from "./Loading";
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -25,7 +27,7 @@ const MyStory = () => {
       .catch(console.error);
   }, []);
 
-  if (!author) return <div>Loading...</div>;
+  if (!author) return <Loading />;
 
   return (
     <main className="min-h-screen p-8 bg-image-custom">
@@ -39,7 +41,8 @@ const MyStory = () => {
           />
           <div className="text-lg flex flex-col justify-center">
             <h1 className="lg:text-5xl font-bold mb-4 text-black">
-              Hey there, I'm <span>{author.name}</span>
+              Hey there,
+              <br /> I'm <span>{author.name}</span>
             </h1>
             <div className="prose lg:prose-xl text-black">
               <BlockContent
