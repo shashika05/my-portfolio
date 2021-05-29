@@ -31,7 +31,7 @@ const About = () => {
     <main className="min-h-screen p-12 bg-image-custom">
       {/* <img src={bgImage} alt="bg-img" className="absolute w-full" /> */}
       <div className="p-10 l:pt-48 container mx-auto relative">
-        <section className="rounded-lg bg-image-custom shadow-2xl lg:flex p-16 container mx-auto">
+        <section className="rounded-lg bg-image-custom shadow-2xl lg:flex lg:p-16 p:8 container mx-auto">
           <img
             src={urlFor(author.authorImage).url()}
             className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"
