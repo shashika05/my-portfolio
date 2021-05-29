@@ -51,7 +51,7 @@ const SinglePost = () => {
                   className="w-10 h-10 rounded-full"
                 />
               </div>
-              <p className="flex items-center pl-2 text-2xl">
+              <p className="flex items-center justify-center text-2xl text-center">
                 {singlePost.name}
               </p>
             </div>

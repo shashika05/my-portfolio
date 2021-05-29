@@ -10,7 +10,7 @@ const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Blog Posts", href: "/post", current: false },
   { name: "Projects", href: "/project", current: false },
-  { name: "About Me!", href: "/about", current: false },
+  { name: "My Story", href: "/my-story", current: false },
 ];
 
 function classNames(...classes) {
