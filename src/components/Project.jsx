@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 
+import Loading from "./Loading";
+
 export default function Project() {
   const [projectData, setProjectData] = useState(null);
 
@@ -20,6 +22,9 @@ export default function Project() {
       .then((data) => setProjectData(data))
       .catch(console.error);
   }, []);
+
+  if (!projectData) return <Loading />;
+
   return (
     <main className="min-h-screen p-12 bg-image-custom">
       <section className="container mx-auto">

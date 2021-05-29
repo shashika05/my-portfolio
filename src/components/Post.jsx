@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../client";
 
+import Loading from "./Loading";
+
 const Post = () => {
   const [postData, setPost] = useState(null);
 
@@ -23,6 +25,8 @@ const Post = () => {
       .then((data) => setPost(data))
       .catch(console.error);
   }, []);
+
+  if (!postData) return <Loading />;
 
   return (
     <main className="min-h-screen p-12 bg-image-custom">

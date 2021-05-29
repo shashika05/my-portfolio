@@ -5,6 +5,8 @@ import BlockContent from "@sanity/block-content-to-react";
 
 import sanityClient from "../client";
 
+import Loading from "./Loading";
+
 const builder = ImageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
@@ -35,7 +37,7 @@ const SinglePost = () => {
       .catch(console.error);
   }, [slug]);
 
-  if (!singlePost) return <div>Loading...</div>;
+  if (!singlePost) return <Loading />;
 
   return (
     <main className="bg-gray-200 min-h-screen p-12 bg-image-custom">
