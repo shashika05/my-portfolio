@@ -5,11 +5,11 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { SocialIcon } from "react-social-icons";
 
-import profileImg from "../assets/profile-img.jpg";
+import profileImg from "../assets/profile-img.png";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
-  { name: "Blog Posts", href: "/post", current: false },
+  { name: "Blog", href: "/blog", current: false },
   { name: "Projects", href: "/project", current: false },
   { name: "My Story", href: "/my-story", current: false },
 ];
@@ -62,19 +62,19 @@ const Navbar = ({ history }) => {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <p
                         key={item.name}
-                        href={item.href}
+                        onClick={() => history.push(`${item.href}`)}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            : "text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer",
                           "px-3 py-2 rounded-md text-base font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </p>
                     ))}
                   </div>
                 </div>
@@ -90,7 +90,7 @@ const Navbar = ({ history }) => {
                           <img
                             className="h-12 w-12 rounded-full object-contain"
                             src={profileImg}
-                            alt=""
+                            alt="profile-img"
                           />
                         </Menu.Button>
                       </div>
@@ -160,7 +160,7 @@ const Navbar = ({ history }) => {
                             {({ active }) => (
                               <span className="block">
                                 <SocialIcon
-                                  url="https://www.fiverr.com/shashika05"
+                                  url="https://www.upwork.com/freelancers/~01746ebf8db384252f"
                                   className="mr-2 ml-2 mb-2"
                                   target="_blank"
                                   fgColor="#fff"
@@ -176,7 +176,7 @@ const Navbar = ({ history }) => {
                             {({ active }) => (
                               <span className="block">
                                 <SocialIcon
-                                  url="https://www.upwork.com/freelancers/~01746ebf8db384252f"
+                                  url="https://www.fiverr.com/shashika05"
                                   className="mr-2 ml-2 mb-2"
                                   target="_blank"
                                   fgColor="#fff"
@@ -210,19 +210,19 @@ const Navbar = ({ history }) => {
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navigation.map((item) => (
-                  <a
+                  <p
                     key={item.name}
-                    href={item.href}
+                    onClick={() => history.push(`${item.href}`)}
                     className={classNames(
                       item.current
                         ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white cursor-pointer",
                       "block px-3 py-2 rounded-md text-base font-medium"
                     )}
                     aria-current={item.current ? "page" : undefined}
                   >
                     {item.name}
-                  </a>
+                  </p>
                 ))}
               </div>
             </Transition>

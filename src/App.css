@@ -2,6 +2,8 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
 .App {
   font-family: "Montserrat", sans-serif;
 }
@@ -18,4 +20,14 @@
 
 .bg-home {
   background-image: url("./assets/background-img.jpg");
+}
+
+.coffee-font {
+  font-family: "Caveat", cursive;
+  color: black;
+}
+
+.buycoffee {
+  height: 60px !important;
+  width: 217px !important;
 }

@@ -20,8 +20,8 @@ function App() {
         <Switch>
           <Route component={Home} path="/" exact />
           <Route component={MyStory} path="/my-story" />
-          <Route component={SinglePost} path="/post/:slug" />
-          <Route component={Post} path="/post" />
+          <Route component={SinglePost} path="/blog/:slug" />
+          <Route component={Post} path="/blog" />
           <Route component={Project} path="/project" />
           <Route path="*" component={NotFound} />
         </Switch>

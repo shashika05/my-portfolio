@@ -36,7 +36,7 @@ export default function Project() {
           {projectData &&
             projectData.map((project, index) => (
               <article className="relative rounded-lg shadow-2xl bg-white p-10 bg-image-custom">
-                <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
+                <h3 className="text-black text-3xl font-bold mb-2 hover:text-indigo-600">
                   <a
                     href={project.link}
                     alt={project.title}
@@ -66,7 +66,7 @@ export default function Project() {
                     href={project.link}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="text-red-500 text-xl relative font-bold hover:underline hover:text-red-400 "
+                    className="text-indigo-600 text-xl relative font-bold hover:underline hover:text-indigo-500 "
                   >
                     View The Project{" "}
                     <span role="img" aria-label="right pointer">

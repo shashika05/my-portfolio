@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import sanityClient from "../client";
 
 import Loading from "./Loading";
 
-const Post = () => {
+const Post = ({ history }) => {
   const [postData, setPost] = useState(null);
 
   useEffect(() => {
@@ -38,10 +39,10 @@ const Post = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {postData &&
             postData.map((post, index) => (
-              <article className="relative rounded-lg shadow-xl bg-white">
-                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+              <article className="relative rounded-lg shadow-xl bg-white transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                <Link to={"/blog/" + post.slug.current} key={post.slug.current}>
                   <span
-                    className="block h-64 relative rounded shadow leading-snug bg-white "
+                    className="block h-48 sm:h-64 lg:h-64 relative rounded shadow leading-snug bg-white "
                     key={index}
                   >
                     <img
@@ -64,4 +65,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default withRouter(Post);
