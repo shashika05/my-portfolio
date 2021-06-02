@@ -87,20 +87,14 @@ const Home = ({ history }) => {
                     </div>
 
                     <div className="mt-4 flex space-x-4">
-                      {/* <a
-                        href="https://www.buymeacoffee.com/localhost443"
-                        className="flex-1 bg-cover"
-                        target="_blank"
-                        rel="noreferrer"
-                        onClickCapture={closeModal}
-                      > */}
                       <a
                         href="https://www.buymeacoffee.com/localhost443"
                         className="flex-1 bg-cover"
                         target="_blank"
+                        onClickCapture={closeModal}
                       >
                         <img
-                          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                          src="https://cdn.buymeacoffee.com/buttons/v2/default-black.png"
                           alt="Buy Me A Coffee"
                           className="buycoffee"
                         />

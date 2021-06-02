@@ -5,28 +5,29 @@ import loadingJson from "../assets/loading.json";
 function Loading() {
   return (
     <div
-      className="mb-100 h-400"
+      // className="flex-1 mb-100 h-25"
       style={{
         flex: 1,
         // backgroundImage: `url(${Background})`,
         alignItems: "center",
         justifyContent: "center",
-        width: "100px",
+        width: "200px",
         height: "600px",
-        marginTop: "200px",
+        marginTop: "150px",
         marginInline: "auto",
       }}
     >
       <Lottie animationData={loadingJson} />
-      <h5
-        style={{
-          textAlign: "center",
-          fontFamily: "Montserrat",
-          marginTop: "2px",
-        }}
+      <h3
+        className="text-center mt-2 text-xl"
+        // style={{
+        //   textAlign: "center",
+        //   fontFamily: "Montserrat",
+        //   marginTop: "2px",
+        // }}
       >
         Loading...
-      </h5>
+      </h3>
     </div>
   );
 }
