@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ImageUrlBuilder from "@sanity/image-url";
@@ -15,6 +16,22 @@ function urlFor(source) {
 const SinglePost = () => {
   const [singlePost, setSinglePost] = useState(null);
   const { slug } = useParams();
+
+  const serializers = {
+    marks: {
+      link: ({ mark, children }) => {
+        // Read https://css-tricks.com/use-target_blank/
+        const { blank, href } = mark;
+        return blank ? (
+          <a href={href} target="_blank" rel="noopener">
+            {children}
+          </a>
+        ) : (
+          <a href={href}>{children}</a>
+        );
+      },
+    },
+  };
 
   useEffect(() => {
     sanityClient
@@ -68,6 +85,7 @@ const SinglePost = () => {
         <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full bg-image-custom">
           <BlockContent
             blocks={singlePost.body}
+            serializers={serializers}
             projectId="j914unc7"
             dataset="production"
           />
