@@ -22,7 +22,7 @@ function classNames(...classes) {
 const Navbar = ({ history }) => {
   const [darkMode, setDarkMode] = useState(false);
   return (
-    <Disclosure as="nav" className={`${darkMode ? "bg-white" : "bg-black"}`}>
+    <Disclosure as="nav" className={`${!darkMode ? "bg-white" : "bg-black"}`}>
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -31,7 +31,7 @@ const Navbar = ({ history }) => {
                 {/* ---------- Mobile menu button ---------- */}
                 <Disclosure.Button
                   className={`${
-                    darkMode
+                    !darkMode
                       ? "text-gray-500 hover:text-black hover:bg-gray-200 focus:ring-black"
                       : "text-gray-400 hover:text-white hover:bg-gray-700 focus:ring-white"
                   } inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white`}
@@ -57,14 +57,14 @@ const Navbar = ({ history }) => {
                   /> */}
                   <div
                     className={`${
-                      darkMode ? "logo-font-black" : "logo-font-white"
+                      !darkMode ? "logo-font-black" : "logo-font-white"
                     } block lg:hidden h-8 w-auto text-5xl mb-4`}
                   >
                     :443
                   </div>
                   <div
                     className={`${
-                      darkMode ? "logo-font-black" : "logo-font-white"
+                      !darkMode ? "logo-font-black" : "logo-font-white"
                     } hidden lg:block h-8 w-auto text-3xl mb-1`}
                   >
                     localhost:443
@@ -84,12 +84,12 @@ const Navbar = ({ history }) => {
                         className={classNames(
                           item.current
                             ? `${
-                                darkMode
+                                !darkMode
                                   ? '"bg-gray-50 text-black"'
                                   : '"bg-gray-900 text-white"'
                               }`
                             : `${
-                                darkMode
+                                !darkMode
                                   ? "text-gray-700 hover:bg-gray-200 hover:text-black "
                                   : "text-gray-300 hover:bg-gray-700 hover:text-white"
                               } cursor-pointer"`,
@@ -108,7 +108,7 @@ const Navbar = ({ history }) => {
                 <div className="hidden sm:block flex-col justify-center items-center">
                   <p
                     className={`${
-                      darkMode ? "text-gray-700" : "text-gray-300"
+                      !darkMode ? "text-gray-700" : "text-gray-300"
                     } text-gray-300 text-xs text-center`}
                   >
                     Dark Mode
@@ -134,7 +134,7 @@ const Navbar = ({ history }) => {
                       <div>
                         <Menu.Button
                           className={`${
-                            darkMode
+                            !darkMode
                               ? "bg-white focus:ring-offset-gray-100 focus:ring-black"
                               : "bg-black focus:ring-offset-gray-800 focus:ring-white"
                           } flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2`}
@@ -142,7 +142,7 @@ const Navbar = ({ history }) => {
                           <span className="sr-only">Open social menu</span>
                           <img
                             className="h-12 w-12 rounded-full object-contain"
-                            src={darkMode ? profileImgBlack : profileImgWhite}
+                            src={!darkMode ? profileImgBlack : profileImgWhite}
                             alt="profile-img"
                           />
                         </Menu.Button>
@@ -160,7 +160,7 @@ const Navbar = ({ history }) => {
                         <Menu.Items
                           static
                           className={`${
-                            darkMode
+                            !darkMode
                               ? "bg-black ring-white"
                               : "bg-white ring-black"
                           } origin-top-right absolute z-20 right-0 mt-2 w-12 rounded-3xl shadow-lg py-1 ring-1 ring-opacity-5 focus:outline-none`}
@@ -172,7 +172,7 @@ const Navbar = ({ history }) => {
                                   url="https://www.youtube.com/channel/UCF2fKQQrgQGSmKqzcP8OEJw"
                                   className="mr-2 ml-2 mb-2 mt-2 block"
                                   target="_blank"
-                                  fgColor={darkMode ? "#000" : "#fff"}
+                                  fgColor={!darkMode ? "#000" : "#fff"}
                                   style={{
                                     height: 35,
                                     width: 35,
@@ -188,7 +188,7 @@ const Navbar = ({ history }) => {
                                   url="https://www.facebook.com/shashika.r.yasas/"
                                   className="mr-2 ml-2 mb-2 block"
                                   target="_blank"
-                                  fgColor={darkMode ? "#000" : "#fff"}
+                                  fgColor={!darkMode ? "#000" : "#fff"}
                                   style={{
                                     height: 35,
                                     width: 35,
@@ -204,7 +204,7 @@ const Navbar = ({ history }) => {
                                   url="https://www.instagram.com/shashika.raveen/"
                                   className="mr-2 ml-2 mb-2"
                                   target="_blank"
-                                  fgColor={darkMode ? "#000" : "#fff"}
+                                  fgColor={!darkMode ? "#000" : "#fff"}
                                   style={{
                                     height: 35,
                                     width: 35,
@@ -220,7 +220,7 @@ const Navbar = ({ history }) => {
                                   url="https://www.upwork.com/freelancers/~01746ebf8db384252f"
                                   className="mr-2 ml-2 mb-2"
                                   target="_blank"
-                                  fgColor={darkMode ? "#000" : "#fff"}
+                                  fgColor={!darkMode ? "#000" : "#fff"}
                                   style={{
                                     height: 35,
                                     width: 35,
@@ -236,7 +236,7 @@ const Navbar = ({ history }) => {
                                   url="https://www.fiverr.com/shashika05"
                                   className="mr-2 ml-2 mb-2"
                                   target="_blank"
-                                  fgColor={darkMode ? "#000" : "#fff"}
+                                  fgColor={!darkMode ? "#000" : "#fff"}
                                   style={{
                                     height: 35,
                                     width: 35,
@@ -273,12 +273,12 @@ const Navbar = ({ history }) => {
                     className={classNames(
                       item.current
                         ? `${
-                            darkMode
+                            !darkMode
                               ? "bg-gray-50 text-black"
                               : "bg-gray-900 text-white"
                           }`
                         : `${
-                            darkMode
+                            !darkMode
                               ? "text-gray-600 hover:bg-gray-200 hover:text-black"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white"
                           } cursor-pointer`,
@@ -290,7 +290,7 @@ const Navbar = ({ history }) => {
                   </p>
                 ))}
                 <div className="px-3 py-2 flex items-center">
-                  <p className={darkMode ? "text-gray-600" : "text-gray-300"}>
+                  <p className={!darkMode ? "text-gray-600" : "text-gray-300"}>
                     Dark Mode
                   </p>
                   <Switch
