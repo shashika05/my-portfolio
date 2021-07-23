@@ -8,9 +8,13 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.logo-font {
+.logo-font-white {
   font-family: "Source Code Pro", monospace;
   color: aliceblue;
+}
+.logo-font-black {
+  font-family: "Source Code Pro", monospace;
+  color: black;
 }
 
 .bg-image-custom {
