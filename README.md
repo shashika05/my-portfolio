@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# Getting Started with Create React App [![Netlify Status](https://api.netlify.com/api/v1/badges/e5526ff5-4b18-46a2-ad7b-1b8f211e1d38/deploy-status)](https://app.netlify.com/sites/localhost443/deploys)
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -63,4 +64,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 This has successfully build with Netlify
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e5526ff5-4b18-46a2-ad7b-1b8f211e1d38/deploy-status)](https://app.netlify.com/sites/localhost443/deploys)
