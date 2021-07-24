@@ -8,12 +8,14 @@ import sanityClient from "../client";
 
 import Loading from "./Loading";
 
+// import "../invert-image.css";
+
 const builder = ImageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
 }
 
-const SinglePost = () => {
+const SinglePost = ({ darkMode }) => {
   const [singlePost, setSinglePost] = useState(null);
   const { slug } = useParams();
 
@@ -54,10 +56,10 @@ const SinglePost = () => {
       .catch(console.error);
   }, [slug]);
 
-  if (!singlePost) return <Loading />;
+  if (!singlePost) return <Loading darkMode={darkMode} />;
 
   return (
-    <main className="bg-gray-200 min-h-screen lg:p-24 md:p-16 sm:p-12 bg-image-custom">
+    <main className="bg-gray-200 min-h-screen lg:p-24 md:p-16 sm:p-12 bg-image-custom2">
       <article className="container shadow-lg mx-auto rounded-lg">
         <header className="relative">
           <div className="absolute h-full w-full flex items-center justify-center p-8">
@@ -82,7 +84,7 @@ const SinglePost = () => {
             style={{ height: "400px" }}
           />
         </header>
-        <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full bg-image-custom">
+        <div className="px-16 lg:px-48 py-12 lg:py-20 prose lg:prose-xl max-w-full bg-image-custom2">
           <BlockContent
             blocks={singlePost.body}
             serializers={serializers}

@@ -1,9 +1,9 @@
 import React from "react";
 
-const NotFound = () => {
+const NotFound = ({ darkMode }) => {
   return (
-    <main className="min-h-screen p-12">
-      <section className="container mx-auto mt-16">
+    <main className={`${darkMode ? "filter invert" : ""} min-h-screen p-12`}>
+      <section className="container mx-auto mt-28">
         <h1 className="sm:text-4xl flex justify-center text-xl">
           Oops, That's not found
         </h1>

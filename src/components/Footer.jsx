@@ -1,13 +1,17 @@
 import React from "react";
 import { withRouter } from "react-router";
 
-const Footer = ({ history }) => {
+const Footer = ({ history, darkMode }) => {
   const year = new Date().getFullYear();
   return (
-    <div class="bg-black">
+    <div class={darkMode ? "bg-black" : "bg-white"}>
       <footer class="flex flex-wrap items-center justify-between p-3 m-auto">
         <div class="container mx-auto flex flex-col flex-wrap items-center justify-between">
-          <ul class="flex mx-auto text-white text-center">
+          <ul
+            class={`${
+              darkMode ? "text-white" : "text-black"
+            } flex mx-auto text-center`}
+          >
             <li class="p-2 cursor-pointer hover:underline">
               <p
                 onClick={() =>
@@ -18,7 +22,11 @@ const Footer = ({ history }) => {
               </p>
             </li>
           </ul>
-          <ul class="flex mx-auto align-center justify-center text-white text-center">
+          <ul
+            class={`${
+              darkMode ? "text-white" : "filter invert"
+            } flex mx-auto align-center justify-center text-center`}
+          >
             <li
               class="p-2 cursor-pointer"
               onClick={() => window.open("https://reactjs.org/")}
@@ -86,7 +94,11 @@ const Footer = ({ history }) => {
               </svg>
             </li>
           </ul>
-          <div class="flex mx-auto text-white text-center">
+          <div
+            class={`${
+              darkMode ? "text-white" : "text-black"
+            } flex mx-auto text-center`}
+          >
             localhost443 © {year}
           </div>
         </div>

@@ -1,5 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import { withRouter } from "react-router";
 import { Disclosure, Menu, Transition, Switch } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
@@ -19,8 +19,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const Navbar = ({ history }) => {
-  const [darkMode, setDarkMode] = useState(false);
+const Navbar = ({ history, darkMode, setDarkMode }) => {
   return (
     <Disclosure as="nav" className={`${!darkMode ? "bg-white" : "bg-black"}`}>
       {({ open }) => (

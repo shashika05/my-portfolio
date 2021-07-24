@@ -17,9 +17,11 @@
   color: black;
 }
 
-.bg-image-custom {
-  /* background-image: url("./assets/web-background.png"); */
-  background-image: url("./assets/circuit-board-background.png");
+.bg-image-custom1 {
+  background-image: url("./assets/circuit-board-background-black.png");
+}
+.bg-image-custom2 {
+  background-image: url("./assets/circuit-board-background-white.png");
 }
 
 .bg-home {

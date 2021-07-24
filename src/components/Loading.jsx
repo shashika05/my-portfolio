@@ -2,7 +2,7 @@ import React from "react";
 import Lottie from "lottie-react";
 import loadingJson from "../assets/loading.json";
 
-function Loading() {
+function Loading({ darkMode }) {
   return (
     <div
       // className="flex-1 mb-100 h-25"
@@ -16,6 +16,7 @@ function Loading() {
         marginTop: "150px",
         marginInline: "auto",
       }}
+      className={darkMode ? "filter invert" : ""}
     >
       <Lottie animationData={loadingJson} />
       <h3

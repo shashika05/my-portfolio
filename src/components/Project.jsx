@@ -3,7 +3,7 @@ import sanityClient from "../client";
 
 import Loading from "./Loading";
 
-export default function Project() {
+export default function Project({ darkMode }) {
   const [projectData, setProjectData] = useState(null);
 
   useEffect(() => {
@@ -23,10 +23,10 @@ export default function Project() {
       .catch(console.error);
   }, []);
 
-  if (!projectData) return <Loading />;
+  if (!projectData) return <Loading darkMode={darkMode} />;
 
   return (
-    <main className="min-h-screen p-12">
+    <main className={`${darkMode ? "filter invert" : ""} min-h-screen p-12`}>
       <section className="container mx-auto">
         <h1 className="text-4xl flex justify-center">My Projects</h1>
         <h2 className="text-base text-gray-600 flex justify-center mb-12">
@@ -35,7 +35,7 @@ export default function Project() {
         <section className="grid md:grid-cols-2 gap-8">
           {projectData &&
             projectData.map((project, index) => (
-              <article className="relative rounded-lg shadow-2xl bg-white p-10 bg-image-custom">
+              <article className="relative rounded-lg shadow-2xl bg-white p-10 bg-image-custom2">
                 <h3 className="text-black text-3xl font-bold mb-2 hover:text-indigo-600">
                   <a
                     href={project.link}
@@ -66,7 +66,9 @@ export default function Project() {
                     href={project.link}
                     rel="noopener noreferrer"
                     target="_blank"
-                    className="text-indigo-600 text-xl relative font-bold hover:underline hover:text-indigo-500 "
+                    className={`${
+                      darkMode ? "filter invert" : ""
+                    } text-indigo-600 text-xl relative font-bold hover:underline hover:text-indigo-500`}
                   >
                     View The Project{" "}
                     <span role="img" aria-label="right pointer">

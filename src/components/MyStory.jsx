@@ -11,7 +11,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const MyStory = () => {
+const MyStory = ({ darkMode }) => {
   const [author, setAuthor] = useState(null);
 
   useEffect(() => {
@@ -27,13 +27,13 @@ const MyStory = () => {
       .catch(console.error);
   }, []);
 
-  if (!author) return <Loading />;
+  if (!author) return <Loading darkMode={darkMode} />;
 
   return (
-    <main className="min-h-screen p-8">
+    <main className={`${darkMode ? "filter invert" : ""} min-h-screen p-8`}>
       {/* <img src={bgImage} alt="bg-img" className="absolute w-full" /> */}
       {/* <div className="p-10 l:pt-48 container mx-auto"> */}
-      <section className="relative rounded-lg shadow-xl bg-white bg-image-custom transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 p-16 sm:p-8">
+      <section className="relative rounded-lg shadow-xl bg-white bg-image-custom2 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 p-16 sm:p-8">
         <img
           src={urlFor(author.authorImage).url()}
           className="rounded w-32 h-32 sm:mx-auto md:mr-8 lg:mt-4 md:mt-4 lg:w-64 lg:h-64 mr-4 mt-4 mb-4"

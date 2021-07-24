@@ -5,7 +5,7 @@ import sanityClient from "../client";
 
 import Loading from "./Loading";
 
-const Post = ({ history }) => {
+const Post = ({ history, darkMode }) => {
   const [postData, setPost] = useState(null);
 
   useEffect(() => {
@@ -27,10 +27,10 @@ const Post = ({ history }) => {
       .catch(console.error);
   }, []);
 
-  if (!postData) return <Loading />;
+  if (!postData) return <Loading darkMode={darkMode} />;
 
   return (
-    <main className="min-h-screen p-12">
+    <main className={`${darkMode ? "filter invert" : ""} min-h-screen p-12`}>
       <section className="container mx-auto">
         <h1 className="text-4xl flex justify-center">Blog Posts</h1>
         <h2 className="text-base flex text-gray-600 justify-center mb-12">
@@ -48,7 +48,9 @@ const Post = ({ history }) => {
                     <img
                       src={post.mainImage.asset.url}
                       alt={post.mainImage.alt}
-                      className="w-full h-full rounded-md object-cover absolute"
+                      className={`${
+                        darkMode ? "filter invert" : ""
+                      } w-full h-full rounded-md object-cover absolute`}
                     />
                     <span className="block relative h-full flex justify-end items-end">
                       <h3 className="text-gray-800 text-lg font-blog px-3 py-4 bg-white text-black bg-opacity-75 rounded-br-md">

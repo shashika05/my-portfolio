@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React, { useState } from "react";
 
 import "./App.css";
 
@@ -13,19 +14,34 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="App bg-image-custom">
+    <div
+      className={`App ${darkMode ? "bg-image-custom1" : "bg-image-custom2"}`}
+    >
       <BrowserRouter>
-        <NavBar />
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <Switch>
-          <Route component={Home} path="/" exact />
-          <Route component={MyStory} path="/my-story" />
-          <Route component={SinglePost} path="/blog/:slug" />
-          <Route component={Post} path="/blog" />
-          <Route component={Project} path="/project" />
-          <Route path="*" component={NotFound} />
+          <Route path="/" exact>
+            <Home darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Route>
+          <Route path="/my-story">
+            <MyStory darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Route>
+          <Route path="/blog/:slug">
+            <SinglePost darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Route>
+          <Route path="/blog">
+            <Post darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Route>
+          <Route path="/project">
+            <Project darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Route>
+          <Route path="*">
+            <NotFound darkMode={darkMode} setDarkMode={setDarkMode} />
+          </Route>
         </Switch>
-        <Footer />
+        <Footer darkMode={darkMode} setDarkMode={setDarkMode} />
       </BrowserRouter>
     </div>
   );
