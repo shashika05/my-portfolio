@@ -75,7 +75,7 @@ const Navbar = ({ history, darkMode, setDarkMode }) => {
                   /> */}
                 </div>
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                  <div className="flex space-x-4 justify-center items-center">
                     {navigation.map((item) => (
                       <p
                         key={item.name}
@@ -264,7 +264,7 @@ const Navbar = ({ history, darkMode, setDarkMode }) => {
               leaveFrom="transform opacity-100 scale-100"
               leaveTo="transform opacity-0 scale-95"
             >
-              <div className="px-2 pt-2 pb-3 space-y-1">
+              <div className="px-2 pt-2 pb-3 space-y-1 items-center justify-center">
                 {navigation.map((item) => (
                   <p
                     key={item.name}
